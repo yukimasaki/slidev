@@ -31,11 +31,18 @@ class: bg-blue-400
 ---
 
 <div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
-  そもそもスイッチとPCって一緒に遊べないの？
+  <div class="flex flex-col text-center">
+    <div class="pb-6">
+      🙄
+    </div>
+    <div class="p-4">
+      そもそもスイッチとPCって一緒に遊べるの？
+    </div>
+  </div>
 </div>
 
 ---
-class: bg-orange-400
+class: bg-red-400
 ---
 
 <div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
@@ -44,38 +51,31 @@ class: bg-orange-400
       🤔
     </div>
     <div class="p-4">
-      特集サーバーと呼ばれる
+      公式提供の特集サーバーなら可能
     </div>
     <div class="p-4">
-      公式が提供するサーバーであれば
-    </div>
-    <div class="p-4">
-      一緒にクロスプレイが可能
+      ただし自由度は無し
     </div>
   </div>
 </div>
 
 ---
-
-- 😫 見ず知らずのユーザーがたくさんいるし、特集サーバーのルールに従う必要がある
-
-<style>
-li {
-  list-style-type: none;
-}
-</style>
-
+class: bg-green-400
 ---
 
-# この話を聞くと何ができるの？
-
-- 😊 自宅に建てた統合版外部サーバーで、スイッチ・PC間のクロスプレイができるようになる
-
-<style>
-li {
-  list-style-type: none;
-}
-</style>
+<div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
+  <div class="flex flex-col text-center">
+    <div class="pb-6">
+      😊
+    </div>
+    <div class="p-4">
+      自分たちだけの楽園（外部サーバー）の
+    </div>
+    <div class="p-4">
+      作り方を紹介します
+    </div>
+  </div>
+</div>
 
 ---
 
