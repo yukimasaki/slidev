@@ -27,12 +27,35 @@ image: images/profile.jpg
 - @yukiii1993
 
 ---
+class: bg-blue-400
+---
 
-# そもそもスイッチとPCって一緒に遊べないの？
+<div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
+  そもそもスイッチとPCって一緒に遊べないの？
+</div>
 
-- 🙄 特集サーバーと呼ばれる公式が提供するサーバーなら一緒にクロスプレイ可能
+---
+class: bg-orange-400
+---
 
-ただし、
+<div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
+  <div class="flex flex-col text-center">
+    <div class="pb-6">
+      🤔
+    </div>
+    <div class="p-4">
+      特集サーバーと呼ばれる
+    </div>
+    <div class="p-4">
+      公式が提供するサーバーであれば
+    </div>
+    <div class="p-4">
+      一緒にクロスプレイが可能
+    </div>
+  </div>
+</div>
+
+---
 
 - 😫 見ず知らずのユーザーがたくさんいるし、特集サーバーのルールに従う必要がある
 
