@@ -24,7 +24,7 @@ image: images/profile.jpg
 - 正木裕貴（まさきゆうき）
 - 愛知県在住
 - ネットワークエンジニア
-- @yukiii1993
+- [@yukiii1993](https://twitter.com/yukiii1993)
 
 ---
 class: bg-blue-400
@@ -36,7 +36,7 @@ class: bg-blue-400
       🙄
     </div>
     <div class="p-4">
-      そもそもスイッチとPCって一緒に遊べるの？
+      スイッチとPCって一緒に遊べるの？
     </div>
   </div>
 </div>
@@ -51,10 +51,10 @@ class: bg-red-400
       🤔
     </div>
     <div class="p-4">
-      公式提供の特集サーバーなら可能
+      公式提供の特集サーバーならクロスプレイ可能！
     </div>
     <div class="p-4">
-      ただし自由度は無し
+      ただし自由度はない
     </div>
   </div>
 </div>
@@ -69,10 +69,7 @@ class: bg-green-400
       😊
     </div>
     <div class="p-4">
-      自分たちだけの楽園（外部サーバー）の
-    </div>
-    <div class="p-4">
-      作り方を紹介します
+      自由に遊べる外部サーバーの作り方を紹介します
     </div>
   </div>
 </div>
@@ -82,26 +79,41 @@ class: bg-green-400
 # 環境
 - Windows10 Pro 64bit 22H2
 - Ubuntu Server 22.04 LTS
+- dnsmasq ***
 - BedorockConnect 1.37
 - Minecraft 1.20.15
+
+---
+layout: full
+---
+
+# 構成図
+
+![](figures/figure1.drawio.svg)
+
+<style>
+p {
+  opacity: 1!important;
+}
+</style>
 
 ---
 transition: slide-up
 ---
 
 # 手順
-1. Windowsでマイクラ統合版サーバーを起動する
-2. 仮想マシンを作成する
-3. BedrockConnectサーバーを起動する
-4. ローカルDNSサーバーを起動する
-5. スイッチのネットワーク設定を変更する
-6. スイッチから接続する
+1. [Windows] マイクラ統合版サーバーを起動する
+2. [Hyper-V] 仮想マシンを作成する
+3. [Ubuntu] BedrockConnectサーバーを起動する
+4. [Ubuntu] ローカルDNSサーバーを起動する
+5. [Switch] スイッチのネットワーク設定を変更する
+6. [Swtich] 統合版サーバーに接続する
 
 ---
 transition: slide-up
 ---
 
-# 1. Windowsでマイクラ統合版サーバーを起動する
+# 1. [Windows] マイクラ統合版サーバーを起動する
 - 公式サイトからWindows用サーバーソフトをダウンロード
   https://www.minecraft.net/ja-jp/download/server/bedrock
 - ZIPファイルを解凍して実行ファイルを起動する
@@ -110,31 +122,135 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 2. 仮想マシンを作成する
+# 2. [Hyper-V] 仮想マシンを作成する
 - Hyper-Vがおすすめ
 - 仮想マシンのスペックは1vCPU / 1GB程度でOK
-- Uubntu Server 22.04をインストールする
+- 仮想スイッチマネージャーで外部スイッチを作成する
+- Ubuntu Server 22.04をインストールする
+- IPを固定しておく
 
 ---
 transition: slide-up
 ---
 
-# 3. BedrockConnectサーバーを起動する
-- リポジトリからjarファイルをダウンロード (BedrockConnect-1.0-SNAPSHOT.jar)
-```bash
-wget https://github.com/Pugmatt/BedrockConnect/releases/download/1.37/BedrockConnect-1.0-SNAPSHOT.jar
-```
-
-- 仮想マシンにOpenJDKをインストール
+# 3. [Ubuntu] BedrockConnectサーバーを起動する (1/2)
+- Javaをインストールする
 ```bash
 sudo apt install -y default-jdk
 ```
 
-- BedrockConnectサーバーを起動
+- リポジトリからjarファイルをダウンロード
 ```bash
-java -jar BedrockConnect-1.0-SNAPSHOT.jar nodb=true
+mkdir bedrock-connect
+cd bedrock-connect
+wget https://github.com/Pugmatt/BedrockConnect/releases/download/1.37/BedrockConnect-1.0-SNAPSHOT.jar
 ```
 
 ---
 transition: slide-up
 ---
+
+# 3. [Ubuntu] BedrockConnectサーバーを起動する (2/2)
+
+- サーバーリストを作成する
+```bash
+nano server-list.json
+```
+JSONファイルの書式はGitHubを参照
+
+https://github.com/Pugmatt/BedrockConnect#defining-your-own-custom-servers
+
+- BedrockConnectサーバーを起動
+```bash
+java -jar BedrockConnect-1.0-SNAPSHOT.jar nodb=true custom_servers=server-list.json
+```
+
+---
+transition: slide-up
+---
+
+# 4. [Ubuntu] ローカルDNSサーバーを起動する (1/2)
+
+- ファイアウォール許可設定を追加する
+```bash
+sudo ufw allow 53
+sudo ufw enable
+```
+
+- dnsmasqをインストールする
+```bash
+sudo apt install -y dnsmasq
+```
+
+- コンフィグの最下行に設定を追加する
+```txt {3-}
+sudo nano /etc/dnsmasq.conf
+
+domain-needed
+bogus-priv
+strict-order
+bind-interfaces
+```
+
+---
+transition: slide-up
+---
+
+# 4. [Ubuntu] ローカルDNSサーバーを起動する (2/2)
+
+- hostsにレコードを追加する
+```bash {3-}
+sudo nano /etc/hosts
+
+192.168.1.10 geo.hivebedrock.network
+192.168.1.10 play.galaxite.net
+192.168.1.10 mco.mineplex.com
+192.168.1.10 mco.cubecraft.net
+192.168.1.10 play.pixelparadise.gg
+192.168.1.10 mco.lbsg.net
+192.168.1.10 play.inpvp.net
+```
+※マイクラ統合版サーバーを起動しているマシンのIPアドレスを指定する
+
+- dnsmasqを再起動する
+```bash
+sudo systemctl restart dnsmasq
+```
+
+---
+transition: slide-up
+---
+
+# 5. [Switch] スイッチのネットワーク設定を変更する (1/3)
+
+<img class="h-80" src="figures/figure2.png">
+
+スイッチのネットワーク設定画面を開きます。
+
+---
+transition: slide-up
+---
+
+# 5. [Switch] スイッチのネットワーク設定を変更する (2/3)
+
+<img class="h-80" src="figures/figure3.png">
+
+「設定の変更」へ進みます。
+
+---
+transition: slide-up
+---
+
+# 5. [Switch] スイッチのネットワーク設定を変更する (3/3)
+
+<img class="h-80" src="figures/figure4.png">
+
+ローカルDNSサーバー(dnsmasqをインストールした仮想マシン)のIPアドレスを指定する
+
+---
+transition: slide-up
+---
+
+# 6. [Swtich] 統合版サーバーに接続する
+
+TODO: 実機を操作して手順を記載する
