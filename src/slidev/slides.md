@@ -225,7 +225,7 @@ transition: slide-up
 
 <img class="h-80" src="figures/figure2.png">
 
-スイッチのネットワーク設定画面を開きます。
+スイッチのネットワーク設定画面を開く
 
 ---
 transition: slide-up
@@ -235,7 +235,7 @@ transition: slide-up
 
 <img class="h-80" src="figures/figure3.png">
 
-「設定の変更」へ進みます。
+「設定の変更」へ進む
 
 ---
 transition: slide-up
@@ -251,6 +251,8 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 統合版サーバーに接続する
+# 6. [Swtich] 外部サーバーに接続する
 
-TODO: 実機を操作して手順を記載する
+<img class="h-80" src="figures/figure5.png">
+
+スイッチから外部サーバーに接続する
