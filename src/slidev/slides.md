@@ -7,12 +7,13 @@ lineNumbers: false
 drawings:
   persist: false
 transition: slide-left
-title: スイッチとPCで同じ外部サーバーに接続して遊ぶ方法
+title: パソコン1台で構築するマイクラ統合版サーバー - slidev
 ---
 
-# スイッチとPCで同じ外部サーバーに接続して遊ぶ方法
+# スイッチとPCでクロスプレイ！
+# 家族と遊べるサーバーの作り方
 
-パソコン1台で構築するローカルDNSサーバー
+### ～ パソコン1台で構築するマイクラ統合版サーバー ～
 
 ---
 layout: image-right
