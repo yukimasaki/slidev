@@ -7,13 +7,13 @@ lineNumbers: false
 drawings:
   persist: false
 transition: slide-left
-title: パソコン1台で構築するマイクラ統合版サーバー - slidev
+title: パソコン1台で構築するマイクラ外部サーバー - slidev
 ---
 
 # スイッチとPCでクロスプレイ！
 # 家族と遊べるサーバーの作り方
 
-### ～ パソコン1台で構築するマイクラ統合版サーバー ～
+### ～ パソコン1台で構築するマイクラ外部サーバー ～
 
 ---
 layout: image-right
@@ -42,7 +42,7 @@ class: bg-blue-400
       </div>
     </div>
     <div class="p-4 text-3xl">
-      ～ パソコン1台で構築するマイクラ統合版サーバー ～
+      ～ パソコン1台で構築するマイクラ外部サーバー ～
     </div>
   </div>
 </div>
@@ -134,18 +134,18 @@ transition: slide-up
 ---
 
 # 手順
-1. [Windows] マイクラ統合版サーバーを起動する
+1. [Windows] マイクラ外部サーバーを起動する
 2. [Hyper-V] 仮想マシンを作成する
 3. [Ubuntu] BedrockConnectサーバーを起動する
 4. [Ubuntu] ローカルDNSサーバーを起動する
 5. [Switch] スイッチのネットワーク設定を変更する
-6. [Swtich] 統合版サーバーに接続する
+6. [Swtich] 外部サーバーに接続する
 
 ---
 transition: slide-up
 ---
 
-# 1. [Windows] マイクラ統合版サーバーを起動する
+# 1. [Windows] マイクラ外部サーバーを起動する
 - 公式サイトからWindows用サーバーソフトをダウンロード
   https://www.minecraft.net/ja-jp/download/server/bedrock
 - ZIPファイルを解凍して実行ファイルを起動する
@@ -242,7 +242,7 @@ sudo nano /etc/hosts
 192.168.1.200 mco.lbsg.net
 192.168.1.200 play.inpvp.net
 ```
-※マイクラ統合版サーバーを起動しているマシンのIPアドレスを指定する
+※マイクラ外部サーバーを起動しているマシンのIPアドレスを指定する
 
 - dnsmasqを再起動する
 ```bash
@@ -283,8 +283,60 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する
+# 6. [Swtich] 外部サーバーに接続する (1/)
 
-<img class="h-80" src="figures/figure5.png">
+<img class="h-80" src="figures/figure6.jpg">
 
-スイッチから外部サーバーに接続する
+`Join To Open Server List`と表示されているサーバーに接続する
+
+---
+transition: slide-up
+---
+
+# 6. [Swtich] 外部サーバーに接続する (2/)
+
+<img class="h-80" src="figures/figure7.jpg">
+
+`Connect to a Server`を選択する
+
+---
+transition: slide-up
+---
+
+# 6. [Swtich] 外部サーバーに接続する (3/)
+
+<img class="h-80" src="figures/figure8.jpg">
+
+- 外部サーバーのIPアドレス
+- 外部サーバーのポート番号(初期状態は19132)
+- 名称(任意)
+を入力し`Add to server list`を有効にする
+
+---
+transition: slide-up
+---
+
+# 6. [Swtich] 外部サーバーに接続する (4/)
+
+<img class="h-80" src="figures/figure9.jpg">
+
+`送信`を選択する
+
+---
+transition: slide-up
+---
+
+# 6. [Swtich] 外部サーバーに接続する (5/)
+
+<img class="h-80" src="figures/figure10.jpg">
+
+先ほど追加した外部サーバーを選択し接続する
+
+---
+transition: slide-up
+---
+
+# 6. [Swtich] 外部サーバーに接続する (6/)
+
+<img class="h-80" src="figures/figure11.jpg">
+
