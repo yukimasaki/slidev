@@ -234,13 +234,13 @@ transition: slide-up
 ```bash {3-}
 sudo nano /etc/hosts
 
-192.168.1.10 geo.hivebedrock.network
-192.168.1.10 play.galaxite.net
-192.168.1.10 mco.mineplex.com
-192.168.1.10 mco.cubecraft.net
-192.168.1.10 play.pixelparadise.gg
-192.168.1.10 mco.lbsg.net
-192.168.1.10 play.inpvp.net
+192.168.1.200 geo.hivebedrock.network
+192.168.1.200 play.galaxite.net
+192.168.1.200 mco.mineplex.com
+192.168.1.200 mco.cubecraft.net
+192.168.1.200 play.pixelparadise.gg
+192.168.1.200 mco.lbsg.net
+192.168.1.200 play.inpvp.net
 ```
 ※マイクラ統合版サーバーを起動しているマシンのIPアドレスを指定する
 
