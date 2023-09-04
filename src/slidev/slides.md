@@ -78,9 +78,9 @@ class: bg-green-400
 ---
 
 # 環境
-- Windows10 Pro 64bit 22H2
+- Windows10 Pro 64bit
 - Ubuntu Server 22.04 LTS
-- dnsmasq ***
+- dnsmasq
 - BedorockConnect 1.37
 - Minecraft 1.20.15
 
