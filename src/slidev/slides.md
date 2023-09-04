@@ -31,7 +31,27 @@ image: images/profile.jpg
 class: bg-blue-400
 ---
 
-<div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
+<div class="absolute inset-0 flex items-center justify-center text-white text-5xl drop-shadow">
+  <div class="flex flex-col text-center">
+    <div class="pb-2">
+      <div class="pb1">
+        スイッチとPCでクロスプレイ！
+      </div>
+      <div class="pb1">
+        家族と遊べるサーバーの作り方
+      </div>
+    </div>
+    <div class="p-4 text-3xl">
+      ～ パソコン1台で構築するマイクラ統合版サーバー ～
+    </div>
+  </div>
+</div>
+
+---
+class: bg-blue-400
+---
+
+<div class="absolute inset-0 flex items-center justify-center text-white text-5xl drop-shadow">
   <div class="flex flex-col text-center">
     <div class="pb-6">
       🙄
@@ -46,7 +66,7 @@ class: bg-blue-400
 class: bg-red-400
 ---
 
-<div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
+<div class="absolute inset-0 flex items-center justify-center text-white text-5xl drop-shadow">
   <div class="flex flex-col text-center">
     <div class="pb-6">
       🤔
@@ -64,7 +84,7 @@ class: bg-red-400
 class: bg-green-400
 ---
 
-<div class="absolute inset-0 flex items-center justify-center text-white text-5xl">
+<div class="absolute inset-0 flex items-center justify-center text-white text-5xl drop-shadow">
   <div class="flex flex-col text-center">
     <div class="pb-6">
       😊
