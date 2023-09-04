@@ -107,7 +107,7 @@ class: bg-green-400
     dnsmasq
   </li>
   <li class="text-red-400">
-    BedorockConnect 1.37
+    BedrockConnect 1.37
   </li>
   <li>
     Minecraft 統合版 1.20.15
