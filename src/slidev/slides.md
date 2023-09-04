@@ -300,7 +300,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (1/)
+# 6. [Swtich] 外部サーバーに接続する (1/6)
 
 <img class="h-80" src="figures/figure6.jpg">
 
@@ -310,7 +310,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (2/)
+# 6. [Swtich] 外部サーバーに接続する (2/6)
 
 <img class="h-80" src="figures/figure7.jpg">
 
@@ -320,20 +320,21 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (3/)
+# 6. [Swtich] 外部サーバーに接続する (3/6)
 
-<img class="h-80" src="figures/figure8.jpg">
+<img class="h-60" src="figures/figure8.jpg">
 
 - 外部サーバーのIPアドレス
 - 外部サーバーのポート番号(初期状態は19132)
 - 名称(任意)
+
 を入力し`Add to server list`を有効にする
 
 ---
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (4/)
+# 6. [Swtich] 外部サーバーに接続する (4/6)
 
 <img class="h-80" src="figures/figure9.jpg">
 
@@ -343,7 +344,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (5/)
+# 6. [Swtich] 外部サーバーに接続する (5/6)
 
 <img class="h-80" src="figures/figure10.jpg">
 
@@ -353,7 +354,8 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (6/)
+# 6. [Swtich] 外部サーバーに接続する (6/6)
 
 <img class="h-80" src="figures/figure11.jpg">
 
+無事接続できれば成功！
