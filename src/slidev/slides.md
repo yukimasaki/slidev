@@ -189,6 +189,12 @@ cd bedrock-connect
 wget https://github.com/Pugmatt/BedrockConnect/releases/download/1.37/BedrockConnect-1.0-SNAPSHOT.jar
 ```
 
+- ファイアウォール許可設定を追加する
+```bash
+sudo ufw allow 19132
+sudo ufw enable
+```
+
 ---
 transition: slide-up
 ---
@@ -217,7 +223,7 @@ transition: slide-up
 - ファイアウォール許可設定を追加する
 ```bash
 sudo ufw allow 53
-sudo ufw enable
+sudo ufw reload
 ```
 
 - dnsmasqをインストールする
