@@ -72,10 +72,7 @@ class: bg-red-400
       🤔
     </div>
     <div class="p-4">
-      公式提供の特集サーバーならクロスプレイ可能！
-    </div>
-    <div class="p-4">
-      ただし自由度はない
+      条件付きでクロスプレイ可能
     </div>
   </div>
 </div>
@@ -98,11 +95,25 @@ class: bg-green-400
 ---
 
 # 環境
-- Windows10 Pro 64bit
-- Ubuntu Server 22.04 LTS
-- dnsmasq
-- BedorockConnect 1.37
-- Minecraft 1.20.15
+
+<ul>
+  <li>
+    Windows10 Pro 64bit
+  </li>
+  <li>
+    Ubuntu Server 22.04 LTS
+  </li>
+  <li class="text-red-400">
+    dnsmasq
+  </li>
+  <li class="text-red-400">
+    BedorockConnect 1.37
+  </li>
+  <li>
+    Minecraft 統合版 1.20.15
+  </li>
+</ul>
+
 
 ---
 layout: full
