@@ -114,7 +114,6 @@ class: bg-green-400
   </li>
 </ul>
 
-
 ---
 layout: full
 ---
@@ -155,11 +154,23 @@ transition: slide-up
 ---
 
 # 2. [Hyper-V] 仮想マシンを作成する
-- Hyper-Vがおすすめ
-- 仮想マシンのスペックは1vCPU / 1GB程度でOK
-- 仮想スイッチマネージャーで外部スイッチを作成する
-- Ubuntu Server 22.04をインストールする
-- IPを固定しておく
+<ul>
+  <li>
+    Hyper-Vがおすすめ
+  </li>
+  <li>
+    仮想マシンのスペックは1vCPU / 1GB程度でOK
+  </li>
+  <li class="text-red-400">
+    仮想スイッチマネージャーで外部スイッチを作成する
+  </li>
+  <li>
+    Ubuntu Server 22.04をインストールする
+  </li>
+  <li>
+    IPを固定しておく
+  </li>
+</ul>
 
 ---
 transition: slide-up
