@@ -251,7 +251,9 @@ Description=BedrockConnect Server
 After=network.target
 
 [Service]
-ExecStart=java -jar /opt/bedrock-connect/BedrockConnect-1.0-SNAPSHOT.jar nodb=true /opt/bedrock-connect/custom_servers=server-list.json
+ExecStart=java -jar nodb=true \
+/opt/bedrock-connect/BedrockConnect-1.0-SNAPSHOT.jar \
+/opt/bedrock-connect/custom_servers=server-list.json
 Restart=on-failure
 
 [Install]
@@ -320,7 +322,6 @@ sudo nano /etc/hosts
 192.168.1.200 mco.lbsg.net
 192.168.1.200 play.inpvp.net
 ```
-※マイクラ外部サーバーを起動しているマシンのIPアドレスを指定する
 
 - dnsmasqを再起動する
 ```bash
