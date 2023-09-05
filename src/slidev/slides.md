@@ -136,9 +136,10 @@ transition: slide-up
 1. [Windows] マイクラ外部サーバーを起動する
 2. [Hyper-V] 仮想マシンを作成する
 3. [Ubuntu] BedrockConnectサーバーを起動する
-4. [Ubuntu] ローカルDNSサーバーを起動する
-5. [Switch] スイッチのネットワーク設定を変更する
-6. [Swtich] 外部サーバーに接続する
+4. [Ubuntu] BedrockConnectの自動起動設定
+5. [Ubuntu] ローカルDNSサーバーを起動する
+6. [Switch] スイッチのネットワーク設定を変更する
+7. [Swtich] 外部サーバーに接続する
 
 ---
 transition: slide-up
