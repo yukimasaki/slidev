@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: images/top-image.jpg
+background: /images/top-image.jpg
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -17,7 +17,7 @@ title: パソコン1台で構築するマイクラ外部サーバー - slidev
 
 ---
 layout: image-right
-image: images/profile.jpg
+image: /images/profile.jpg
 ---
 
 # 自己紹介
@@ -120,7 +120,7 @@ layout: full
 
 # 構成図
 
-![](figures/figure1.drawio.svg)
+![](/figures/figure1.drawio.svg)
 
 <style>
 p {
@@ -334,7 +334,7 @@ transition: slide-up
 
 # 6. [Switch] スイッチのネットワーク設定を変更する (1/3)
 
-<img class="h-80" src="figures/figure2.png">
+<img class="h-80" src="/figures/figure2.png">
 
 スイッチのネットワーク設定画面を開く
 
@@ -344,7 +344,7 @@ transition: slide-up
 
 # 6. [Switch] スイッチのネットワーク設定を変更する (2/3)
 
-<img class="h-80" src="figures/figure3.png">
+<img class="h-80" src="/figures/figure3.png">
 
 「設定の変更」へ進む
 
@@ -354,7 +354,7 @@ transition: slide-up
 
 # 6. [Switch] スイッチのネットワーク設定を変更する (3/3)
 
-<img class="h-80" src="figures/figure4.png">
+<img class="h-80" src="/figures/figure4.png">
 
 ローカルDNSサーバー(dnsmasqをインストールした仮想マシン)のIPアドレスを指定する
 
@@ -364,7 +364,7 @@ transition: slide-up
 
 # 7. [Swtich] 外部サーバーに接続する (1/6)
 
-<img class="h-80" src="figures/figure6.jpg">
+<img class="h-80" src="/figures/figure6.jpg">
 
 `Join To Open Server List`と表示されているサーバーに接続する
 
@@ -374,7 +374,7 @@ transition: slide-up
 
 # 7. [Swtich] 外部サーバーに接続する (2/6)
 
-<img class="h-80" src="figures/figure7.jpg">
+<img class="h-80" src="/figures/figure7.jpg">
 
 `Connect to a Server`を選択する
 
@@ -384,7 +384,7 @@ transition: slide-up
 
 # 7. [Swtich] 外部サーバーに接続する (3/6)
 
-<img class="h-60" src="figures/figure8.jpg">
+<img class="h-60" src="/figures/figure8.jpg">
 
 - 外部サーバーのIPアドレス
 - 外部サーバーのポート番号(初期状態は19132)
@@ -398,7 +398,7 @@ transition: slide-up
 
 # 7. [Swtich] 外部サーバーに接続する (4/6)
 
-<img class="h-80" src="figures/figure9.jpg">
+<img class="h-80" src="/figures/figure9.jpg">
 
 `送信`を選択する
 
@@ -408,7 +408,7 @@ transition: slide-up
 
 # 7. [Swtich] 外部サーバーに接続する (5/6)
 
-<img class="h-80" src="figures/figure10.jpg">
+<img class="h-80" src="/figures/figure10.jpg">
 
 先ほど追加した外部サーバーを選択し接続する
 
@@ -418,6 +418,6 @@ transition: slide-up
 
 # 7. [Swtich] 外部サーバーに接続する (6/6)
 
-<img class="h-80" src="figures/figure11.jpg">
+<img class="h-80" src="/figures/figure11.jpg">
 
 無事接続できれば成功！
