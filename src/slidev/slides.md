@@ -184,8 +184,8 @@ sudo apt install -y default-jdk
 
 - リポジトリからjarファイルをダウンロード
 ```bash
-mkdir bedrock-connect
-cd bedrock-connect
+sudo mkdir /opt/bedrock-connect
+cd /opt/bedrock-connect
 wget https://github.com/Pugmatt/BedrockConnect/releases/download/1.37/BedrockConnect-1.0-SNAPSHOT.jar
 ```
 
@@ -203,7 +203,7 @@ transition: slide-up
 
 - サーバーリストを作成する
 ```bash
-nano server-list.json
+sudo nano /opt/bedrock-connect/server-list.json
 ```
 
 - 書式例
@@ -230,14 +230,56 @@ transition: slide-up
 
 - BedrockConnectサーバーを起動
 ```bash
-java -jar BedrockConnect-1.0-SNAPSHOT.jar nodb=true custom_servers=server-list.json
+java -jar /opt/bedrock-connect/BedrockConnect-1.0-SNAPSHOT.jar nodb=true custom_servers=/opt/bedrock-connect/server-list.json
 ```
 
 ---
 transition: slide-up
 ---
 
-# 4. [Ubuntu] ローカルDNSサーバーを起動する (1/2)
+# 4. [Ubuntu] BedrockConnectの自動起動設定 (1/2)
+
+- SystemdのUnitファイルを作成する
+```bash
+sudo nano /usr/lib/systemd/system/bconnect.service
+```
+
+- 自動起動設定を記述する
+```
+[Unit]
+Description=BedrockConnect Server
+After=network.target
+
+[Service]
+ExecStart=java -jar /opt/bedrock-connect/BedrockConnect-1.0-SNAPSHOT.jar nodb=true /opt/bedrock-connect/custom_servers=server-list.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+---
+transition: slide-up
+---
+
+# 4. [Ubuntu] BedrockConnectの自動起動設定 (2/2)
+
+- サービスを開始する
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start bconnect.service
+```
+
+- サービスを永続化する
+```bash
+sudo systemctl enable bconnect.service
+```
+
+---
+transition: slide-up
+---
+
+# 5. [Ubuntu] ローカルDNSサーバーを起動する (1/2)
 
 - ファイアウォール許可設定を追加する
 ```bash
@@ -264,7 +306,7 @@ bind-interfaces
 transition: slide-up
 ---
 
-# 4. [Ubuntu] ローカルDNSサーバーを起動する (2/2)
+# 5. [Ubuntu] ローカルDNSサーバーを起動する (2/2)
 
 - hostsにレコードを追加する
 ```bash {3-}
@@ -289,7 +331,7 @@ sudo systemctl restart dnsmasq
 transition: slide-up
 ---
 
-# 5. [Switch] スイッチのネットワーク設定を変更する (1/3)
+# 6. [Switch] スイッチのネットワーク設定を変更する (1/3)
 
 <img class="h-80" src="figures/figure2.png">
 
@@ -299,7 +341,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 5. [Switch] スイッチのネットワーク設定を変更する (2/3)
+# 6. [Switch] スイッチのネットワーク設定を変更する (2/3)
 
 <img class="h-80" src="figures/figure3.png">
 
@@ -309,7 +351,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 5. [Switch] スイッチのネットワーク設定を変更する (3/3)
+# 6. [Switch] スイッチのネットワーク設定を変更する (3/3)
 
 <img class="h-80" src="figures/figure4.png">
 
@@ -319,7 +361,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (1/6)
+# 7. [Swtich] 外部サーバーに接続する (1/6)
 
 <img class="h-80" src="figures/figure6.jpg">
 
@@ -329,7 +371,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (2/6)
+# 7. [Swtich] 外部サーバーに接続する (2/6)
 
 <img class="h-80" src="figures/figure7.jpg">
 
@@ -339,7 +381,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (3/6)
+# 7. [Swtich] 外部サーバーに接続する (3/6)
 
 <img class="h-60" src="figures/figure8.jpg">
 
@@ -353,7 +395,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (4/6)
+# 7. [Swtich] 外部サーバーに接続する (4/6)
 
 <img class="h-80" src="figures/figure9.jpg">
 
@@ -363,7 +405,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (5/6)
+# 7. [Swtich] 外部サーバーに接続する (5/6)
 
 <img class="h-80" src="figures/figure10.jpg">
 
@@ -373,7 +415,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 6. [Swtich] 外部サーバーに接続する (6/6)
+# 7. [Swtich] 外部サーバーに接続する (6/6)
 
 <img class="h-80" src="figures/figure11.jpg">
 
