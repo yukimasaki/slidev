@@ -253,7 +253,7 @@ After=network.target
 [Service]
 ExecStart=java -jar nodb=true \
 /opt/bedrock-connect/BedrockConnect-1.0-SNAPSHOT.jar \
-/opt/bedrock-connect/custom_servers=server-list.json
+custom_servers=/opt/bedrock-connect/server-list.json
 Restart=on-failure
 
 [Install]
