@@ -176,7 +176,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-# 3. [Ubuntu] BedrockConnectサーバーを起動する (1/2)
+# 3. [Ubuntu] BedrockConnectサーバーを起動する (1/3)
 - Javaをインストールする
 ```bash
 sudo apt install -y default-jdk
@@ -199,15 +199,34 @@ sudo ufw enable
 transition: slide-up
 ---
 
-# 3. [Ubuntu] BedrockConnectサーバーを起動する (2/2)
+# 3. [Ubuntu] BedrockConnectサーバーを起動する (2/3)
 
 - サーバーリストを作成する
 ```bash
 nano server-list.json
 ```
-JSONファイルの書式はGitHubを参照
+
+- 書式例
+```json
+[
+	{
+		"name": "Yuki Server",
+		"iconUrl": "https://example.com/icon.png",
+		"address": "192.168.1.10",
+		"port": 19132
+	}
+]
+```
+
+JSONファイルの詳しい書式はGitHubを参照
 
 https://github.com/Pugmatt/BedrockConnect#defining-your-own-custom-servers
+
+---
+transition: slide-up
+---
+
+# 3. [Ubuntu] BedrockConnectサーバーを起動する (3/3)
 
 - BedrockConnectサーバーを起動
 ```bash
