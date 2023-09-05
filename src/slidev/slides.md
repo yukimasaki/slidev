@@ -230,7 +230,7 @@ transition: slide-up
 
 - BedrockConnectサーバーを起動
 ```bash
-java -jar /opt/bedrock-connect/BedrockConnect-1.0-SNAPSHOT.jar nodb=true custom_servers=/opt/bedrock-connect/server-list.json
+java -jar BedrockConnect-1.0-SNAPSHOT.jar nodb=true custom_servers=server-list.json
 ```
 
 ---
